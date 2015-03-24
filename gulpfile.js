@@ -2,7 +2,6 @@ var gulp = require('gulp'),
     jasmine = require('gulp-jasmine'),
     babel = require('gulp-babel'),
     sourcemaps = require('gulp-sourcemaps'),
-    browserify = require('browserify'),
     concat = require('gulp-concat');
 
 gulp.task('dev:scripts', function() {

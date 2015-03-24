@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/taylorcode/update-js-model",
   "dependencies": {
-    "deep-equal": "^1.0.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^4.0.0",
     "gulp-concat": "^2.5.2",
@@ -31,9 +30,7 @@
     "lodash.toplainobject": "^3.0.0"
   },
   "devDependencies": {
-    "babelify": "^5.0.4",
-    "browserify": "^9.0.3",
     "gulp-jasmine": "^2.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "deep-equal": "^1.0.0"
   }
 }
