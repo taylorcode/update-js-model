@@ -1,6 +1,6 @@
 {
   "name": "update-js-model",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "An algorithm for updating a data model (hash or array) without destroying/unlinking/reassigning and references, recursively.",
   "main": "gulpfile.js",
   "scripts": {
