@@ -1,10 +1,10 @@
 export function updateModel (oldObj, newObj) {
 
    if(oldObj.constructor !== newObj.constructor) {
-      throw new Error('updateObject: both arguments passed must be of the same type.')
+      throw new Error('updateModel: both arguments passed must be of the same type.')
    }
    if(!oldObj instanceof Object) {
-      throw new Error('updateObject: arguments passed cannot be primitive.')
+      throw new Error('updateModel: arguments passed cannot be primitive.')
    }
 
    function compareElementsAtKey(key) {
@@ -14,7 +14,7 @@ export function updateModel (oldObj, newObj) {
       } else
       // they are both either arrays or hashes, and are not of primitive types
       if(oldObj[key].constructor === newObj[key].constructor && oldObj[key] instanceof Object) {
-         updateObject(oldObj[key], newObj[key])
+         updateModel(oldObj[key], newObj[key])
       } else
 
       if (oldObj[key] !== newObj[key]) { // all this compares is if primitives are equal, don't reassign

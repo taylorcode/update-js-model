@@ -1,30 +1,24 @@
 var gulp = require('gulp'),
+    jasmine = require('gulp-jasmine'),
     babel = require('gulp-babel'),
-    babelify = require('babelify'),
     sourcemaps = require('gulp-sourcemaps'),
     browserify = require('browserify'),
-    concat = require('gulp-concat'),
-    source = require('vinyl-source-stream');
+    concat = require('gulp-concat');
 
 gulp.task('dev:scripts', function() {
     gulp.src('src/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat('update-model.js'))
+        .pipe(gulp.dest('dist/node'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/node'));
+        .pipe(gulp.dest('dist/browser'));
 });
 
-gulp.task('dev:modules', function() {
-    browserify({
-        entries: './dist/node/update-model.js',
-        debug: true,
-    })
-    .transform(babelify)
-    .bundle()
-    .pipe(source('update-model.js'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/browser'));
+ 
+gulp.task('dev:test', function () {
+    return gulp.src('spec/test.js')
+        .pipe(jasmine());
 });
 
-gulp.task('default', ['dev:scripts', 'dev:modules']);
+gulp.task('default', ['dev:scripts', 'dev:test']);
