@@ -44,4 +44,7 @@ export function updateModel (oldObj, newObj) {
          compareElementsAtKey(prop)
       }
    }
+
+   return oldObj;
+
 }

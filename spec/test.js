@@ -1,5 +1,5 @@
 var updateModel = require('../dist/node/update-model.js').updateModel,
-	toPlainObject = require('lodash.toplainobject');
+	toPlainObject = require('lodash.toplainobject'),
 	deepEqual = require('deep-equal');
 
 describe('A comprehensive data model update', function () {
